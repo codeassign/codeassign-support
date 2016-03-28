@@ -1,0 +1,12 @@
+.container {
+  margin-top: 70px;
+}
+
+.dropdown-menu span.glyphicon {
+  margin-right: 5px;
+}
+
+th span.glyphicon {
+    font-size: 11px;
+    margin-left: 5px;
+}

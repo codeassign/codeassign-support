@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/jquery-2.2.2.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> Cense</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Tasks <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">My Tasks</a><li>
+          <li><a href="#">Search</a><li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Herman Zvonimir Došilović <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>My Account</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>Help</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Log out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <ol class="breadcrumb" >
+      <li class="active">tasks</li>
+    </ol>
+
+    <div class="page-header">
+      <h1>
+        Tasks
+        <a class="btn btn-success pull-right" href="#" role="button">New Task</a>
+        <a class="btn btn-success pull-right" style="margin-right: 5px;" href="#" role="button">New Folder</a>
+      </h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-6">
+        <input class="form-control" type="text" placeholder="Search"></input>
+      </div>
+    </div>
+    <table class="table table-hover">
+      <thead>
+          <tr>
+            <th>#<span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+            <th>Name<span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+            <th>Owner<span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+            <th>Type<span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span></th>
+            <th>Created at<span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>1</td>
+            <td><a href="#">fer</a></td>
+            <td><a href="#">Ivica Botički</a></td>
+            <td><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></td>
+            <td>2015-12-31 13:45</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td><a href="#">mit</a></td>
+            <td><a href="#">Charles E. Leiserson</a></td>
+            <td><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></td>
+            <td>2015-12-31 13:45</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td><a href="#">dartmount</a></td>
+            <td><a href="#">Thomas H. Cormen</a></td>
+            <td><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></td>
+            <td>2015-12-31 13:45</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td><a href="#">stonybrook</a></td>
+            <td><a href="#">Steven Sol Skiena</a></td>
+            <td><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></td>
+            <td>2015-12-31 13:45</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td><a href="#">The Shortest Path</a></td>
+            <td><a href="#">Herman Zvonimir Došilović</a></td>
+            <td><span class="glyphicon glyphicon-book" aria-hidden="true"></span></td>
+            <td>2015-12-31 13:45</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td><a href="#">Pyramids</a></td>
+            <td><a href="#">Petar Šegina</a></td>
+            <td><span class="glyphicon glyphicon-book" aria-hidden="true"></span></td>
+            <td>2015-12-31 13:45</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td><a href="#">Small factorials</a></td>
+            <td><a href="#">Antonia Elek</a></td>
+            <td><span class="glyphicon glyphicon-book" aria-hidden="true"></span></td>
+            <td>2015-12-31 13:45</td>
+          </tr>
+      </tbody>
+    </table>
+
+    <nav>
+      <ul class="pagination pagination-sm">
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</body>
+</html>
