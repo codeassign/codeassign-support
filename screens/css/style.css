@@ -1,9 +1,27 @@
+body {
+  padding-bottom: 50px;
+}
+
 .container {
   margin-top: 70px;
 }
 
 .dropdown-menu span.glyphicon {
   margin-right: 5px;
+}
+
+#marked-mathjax-input {
+  resize: vertical;
+}
+
+.mathjax, #marked-mathjax-input {
+  min-height: 250px;
+}
+
+.mathjax.preview {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 th span.glyphicon {

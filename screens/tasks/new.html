@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <script src="../js/jquery-2.2.2.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="../js/marked.js"></script>
+  <script src="../js/markjax.js"></script>
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/highlight.js/9.2.0/styles/default.min.css">
+  <script src="http://cdn.jsdelivr.net/highlight.js/9.2.0/highlight.min.js"></script>
+  <script src="../js/autosize.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> Cense</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Tasks <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">My Tasks</a><li>
+          <li><a href="#">Search</a><li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Herman Zvonimir Došilović <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>My Account</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>Help</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Log out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header"><h1>New Task</h1></div>
+
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <textarea class="form-control" id="marked-mathjax-input" placeholder="Type your task text here">
+# Math
+When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+
+# Markdown
+* [Facebook](https://web.facebook.com)
+* [_Github_](https://www.github.com)
+* [__Quora__](https://www.quora.com)
+
+![image](https://besthostingforasp.net/wp-content/uploads/2014/01/linux-vs-windows-featured-image.jpg)
+
+## Inline code
+Hey did you know that `ls` is really cool command. Also did you know that here you can press `TAB` key	-	:)
+
+## Block code
+
+Write your code in C:
+```
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, world\n");
+    return 0;
+}
+```
+
+Or in Java:
+```
+public class Hello {
+  public static void main(String[] args) {
+    System.out.println("hello, world");
+  }
+}
+```
+
+Or in Python:
+```
+print "hello, world"
+```
+        </textarea>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="mathjax preview" id="marked-mathjax-preview"></div>
+        <div class="mathjax preview" id="marked-mathjax-preview-buffer" style="display:none; position:absolute; top:0; left: 0"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
