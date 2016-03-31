@@ -35,15 +35,25 @@ var Preview = {
 
   timeout: null,     // store setTimout id
   mjRunning: false,  // true when MathJax is processing
-  oldText: null,     // used to check if an update is needed
+  oldtext: {},     // used to check if an update is needed
+
+  index: null,
+  length: null,
 
   //
   //  Get the preview and buffer DIV's
   //
   Init: function () {
-    this.preview = document.getElementsByClassName("markjax-preview")[0];
-    this.buffer = document.getElementsByClassName("markjax-preview-buffer")[0];
-    this.textarea = document.getElementsByClassName("markjax-input")[0];
+    this.preview = document.getElementsByClassName("markjax-preview");
+    this.buffer = document.getElementsByClassName("markjax-preview-buffer");
+    this.textarea = document.getElementsByClassName("markjax-input");
+
+    this.length = this.preview.length;
+    for (var i = 0; i < this.length; i++) {
+      this.preview[i].setAttribute("markjax-index", i);
+      this.buffer[i].setAttribute("markjax-index", i);
+      this.textarea[i].setAttribute("markjax-index", i);
+    }
   },
 
   //
@@ -52,12 +62,7 @@ var Preview = {
   //  the results of running MathJax are more accurate that way.)
   //
   SwapBuffers: function () {
-    var t = this.preview;
-    this.preview = this.buffer;
-    this.buffer = t;
-
-    this.buffer.classList.add("markjax-hidden");
-    this.preview.classList.remove("markjax-hidden");
+    this.preview[this.index].innerHTML = this.buffer[this.index].innerHTML
   },
 
   //
@@ -76,6 +81,13 @@ var Preview = {
     this.timeout = setTimeout(this.callback, this.delay);
   },
 
+  UpdateAll: function () {
+    for (var i = 0; i < this.length; i++) {
+      this.index = i;
+      this.Update();
+    }
+  },
+
   //
   //  Creates the preview and runs MathJax on it.
   //  If MathJax is already trying to render the code, return
@@ -89,16 +101,16 @@ var Preview = {
       return;
     }
 
-    var text = this.textarea.value;
-    if (text === this.oldtext) {
+    var text = this.textarea[this.index].value;
+    if (text === this.oldtext[this.index]) {
       return;
     }
 
     text = this.Escape(text);                       //Escape tags before doing stuff
-    this.buffer.innerHTML = this.oldtext = text;
+    this.buffer[this.index].innerHTML = this.oldtext[this.index] = text;
     this.mjRunning = true;
     MathJax.Hub.Queue(
-      ["Typeset", MathJax.Hub, this.buffer],
+      ["Typeset", MathJax.Hub, this.buffer[this.index]],
       ["PreviewDone", this],
       ["resetEquationNumbers", MathJax.InputJax.TeX]
     );
@@ -111,13 +123,13 @@ var Preview = {
   //
   PreviewDone: function () {
     this.mjRunning = false;
-    text = this.buffer.innerHTML;
+    text = this.buffer[this.index].innerHTML;
     // replace occurrences of &gt; at the beginning of a new line
     // with > again, so Markdown blockquotes are handled correctly
     text = text.replace(/^&gt;/mg, '>');
     text = text.replace(/&lt;/mg, '<');  // <
     text = text.replace(/&gt;/mg, '>');  // >
-    this.buffer.innerHTML = marked (text);
+    this.buffer[this.index].innerHTML = marked (text);
     this.SwapBuffers();
   },
 
@@ -137,8 +149,8 @@ var Preview = {
   // add something like  onkeypress="Preview.UpdateKeyPress(event)" to textarea's attributes.
   UpdateKeyPress: function (event) {
     if (event.keyCode < 16 || event.keyCode > 47) {
-      this.preview.innerHTML = '<p>' + marked(this.textarea.value) + '</p>';
-      this.buffer.innerHTML = '<p>' + marked(this.textarea.value) + '</p>';
+      this.preview[this.index].innerHTML = '<p>' + marked(this.textarea[this.index].value) + '</p>';
+      this.buffer[this.index].innerHTML = '<p>' + marked(this.textarea[this.index].value) + '</p>';
     }
     this.Update();
   }
@@ -152,11 +164,12 @@ Preview.callback.autoReset = true;  // make sure it can run more than once
 
 $(document).ready(function() {
   Preview.Init();
-  Preview.Update();
+  Preview.UpdateAll();
 
   autosize($("textarea.markjax-editor.markjax-input"));
 
   $(".markjax-editor.markjax-input").on("keyup", function(){
+    Preview.index = parseInt(this.getAttribute("markjax-index"));
     Preview.Update();
   });
 

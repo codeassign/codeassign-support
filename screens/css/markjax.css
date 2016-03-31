@@ -6,8 +6,7 @@
   resize: vertical;
 }
 
-.markjax-editor.markjax-preview,
-.markjax-editor.markjax-preview-buffer {
+.markjax-editor.markjax-preview {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
