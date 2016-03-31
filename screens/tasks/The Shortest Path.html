@@ -5,6 +5,15 @@
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <script src="../js/jquery-2.2.2.min.js"></script>
   <script src="../js/bootstrap.js"></script>
+
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="../js/marked.js"></script>
+  <script src="../js/markjax.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/markjax.css">
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/highlight.js/9.2.0/styles/default.min.css">
+  <script src="http://cdn.jsdelivr.net/highlight.js/9.2.0/highlight.min.js"></script>
+
+  <script src="../js/autosize.min.js"></script>
 </head>
 
 <body>
@@ -67,7 +76,38 @@
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="task"></div>
+        <div role="tabpanel" class="tab-pane active mathjax markjax-preview" id="task"></div>
+        <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
+        <div class="markjax-input markjax-hidden">
+You are given a list of cities.
+Each direct connection between two cities has its transportation cost (an integer bigger than $0$).
+The goal is to find the paths of minimum cost between pairs of cities.
+Assume that the cost of each path (which is the sum of costs of all direct connections belongning to this path) is at most $200000$.
+The name of a city is a string containing characters $a, ..., z$ and is at most $10$ characters long.
+
+### Input
+$s$ : the number of tests $\leq 10$
+
+$n$ : the number of cities $\leq 10000]$
+
+_NAME_ : city name
+
+$p$ : the number of neighbours of city _NAME_
+
+$nr$ $cost$:
+* $nr$ : index of a city connected to _NAME_ (the index of the first city is $1$)
+* $cost$ : the transportation cost
+
+$r$ : the number of paths to find $\leq 100$
+
+_NAME1_ _NAME2_ : _NAME1_ is the source, _NAME2_ is the destination
+
+_empty line separating the tests_
+
+### Output
+$cost$ : the minimum transportation cost from city _NAME1_ to city _NAME2_ (one per line)
+        </div>
+
         <div role="tabpanel" class="tab-pane" id="hints"></div>
         <div role="tabpanel" class="tab-pane" id="solutions"></div>
       </div>

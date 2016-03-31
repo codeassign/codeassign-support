@@ -101,7 +101,13 @@ var Preview = {
       return;
     }
 
-    var text = this.textarea[this.index].value;
+    var text;
+    if (this.textarea[this.index].classList.contains("markjax-editor")) {
+      text = this.textarea[this.index].value;
+    } else {
+      text = this.textarea[this.index].innerHTML;
+    }
+    
     if (text === this.oldtext[this.index]) {
       return;
     }

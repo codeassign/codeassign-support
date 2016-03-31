@@ -10,21 +10,14 @@ body {
   margin-right: 5px;
 }
 
-#marked-mathjax-input {
-  resize: vertical;
-}
-
-.mathjax, #marked-mathjax-input {
-  min-height: 250px;
-}
-
-.mathjax.preview {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 th span.glyphicon {
     font-size: 11px;
     margin-left: 5px;
+}
+
+.tab-pane.markjax-preview {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 0 0 4px 4px;
+  border-top: 0px;
 }
