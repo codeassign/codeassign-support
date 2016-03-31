@@ -5,7 +5,11 @@ MathJax.Hub.Config({
     ignoreClass: ".*",
     processClass: "mathjax"
   },
-  TeX: { equationNumbers: {autoNumber: "AMS"} }
+  TeX: {
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  }
 });
 
 marked.setOptions({
@@ -37,9 +41,9 @@ var Preview = {
   //  Get the preview and buffer DIV's
   //
   Init: function () {
-    this.preview = document.getElementById("marked-mathjax-preview");
-    this.buffer = document.getElementById("marked-mathjax-preview-buffer");
-    this.textarea = document.getElementById("marked-mathjax-input");
+    this.preview = document.getElementsByClassName("markjax-preview")[0];
+    this.buffer = document.getElementsByClassName("markjax-preview-buffer")[0];
+    this.textarea = document.getElementsByClassName("markjax-input")[0];
   },
 
   //
@@ -48,14 +52,12 @@ var Preview = {
   //  the results of running MathJax are more accurate that way.)
   //
   SwapBuffers: function () {
-    var buffer = this.preview;
-    var preview = this.buffer;
-    this.buffer = buffer;
-    this.preview = preview;
-    buffer.style.display = "none";
-    buffer.style.position = "absolute";
-    preview.style.position = "";
-    preview.style.display = "";
+    var t = this.preview;
+    this.preview = this.buffer;
+    this.buffer = t;
+
+    this.buffer.classList.add("markjax-hidden");
+    this.preview.classList.remove("markjax-hidden");
   },
 
   //
@@ -67,8 +69,11 @@ var Preview = {
   //  The callback function is set up below, after the Preview object is set up.
   //
   Update: function () {
-    if (this.timeout) {clearTimeout(this.timeout)}
-    this.timeout = setTimeout(this.callback,this.delay);
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+
+    this.timeout = setTimeout(this.callback, this.delay);
   },
 
   //
@@ -80,15 +85,21 @@ var Preview = {
   //
   CreatePreview: function () {
     Preview.timeout = null;
-    if (this.mjRunning) return;
+    if (this.mjRunning) {
+      return;
+    }
+
     var text = this.textarea.value;
-    if (text === this.oldtext) return;
+    if (text === this.oldtext) {
+      return;
+    }
+
     text = this.Escape(text);                       //Escape tags before doing stuff
     this.buffer.innerHTML = this.oldtext = text;
     this.mjRunning = true;
     MathJax.Hub.Queue(
-      ["Typeset",MathJax.Hub,this.buffer],
-      ["PreviewDone",this],
+      ["Typeset", MathJax.Hub, this.buffer],
+      ["PreviewDone", this],
       ["resetEquationNumbers", MathJax.InputJax.TeX]
     );
   },
@@ -131,7 +142,6 @@ var Preview = {
     }
     this.Update();
   }
-
 };
 
 //
@@ -144,13 +154,13 @@ $(document).ready(function() {
   Preview.Init();
   Preview.Update();
 
-  autosize($('textarea'));
-  
-  $("#marked-mathjax-input").on("keyup", function(){
+  autosize($("textarea.markjax-editor.markjax-input"));
+
+  $(".markjax-editor.markjax-input").on("keyup", function(){
     Preview.Update();
   });
 
-  $("textarea").keydown(function(e) {
+  $("textarea.markjax-editor.markjax-input").keydown(function(e) {
     if(e.keyCode === 9) { // tab was pressed
       // get caret position/selection
       var start = this.selectionStart;
@@ -160,10 +170,10 @@ $(document).ready(function() {
       var value = $this.val();
 
       // set textarea value to: text before caret + tab + text after caret
-      $this.val(value.substring(0, start) + "\t" + value.substring(end));
+      $this.val(value.substring(0, start) + "  " + value.substring(end));
 
       // put caret at right position again (add one for the tab)
-      this.selectionStart = this.selectionEnd = start + 1;
+      this.selectionStart = this.selectionEnd = start + 2;
 
       // prevent the focus lose
       e.preventDefault();

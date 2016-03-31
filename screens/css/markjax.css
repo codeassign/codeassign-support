@@ -1,0 +1,21 @@
+.markjax-editor {
+  min-height: 250px;
+}
+
+.markjax-editor.markjax-input {
+  resize: vertical;
+}
+
+.markjax-editor.markjax-preview,
+.markjax-editor.markjax-preview-buffer {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.markjax-hidden {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
