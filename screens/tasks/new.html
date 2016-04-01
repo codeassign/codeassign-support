@@ -26,12 +26,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> Cense</a>
+        <a class="navbar-brand" href="../index.html"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> Cense</a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Tasks <span class="sr-only">(current)</span></a></li>
+          <li><a href="../index.html">Tasks</a><li>
           <li><a href="#">My Tasks</a><li>
           <li><a href="#">Search</a><li>
         </ul>
@@ -53,12 +53,26 @@
   <div class="container">
     <div class="page-header"><h1>New Task</h1></div>
 
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <textarea class="form-control markjax-editor markjax-input" placeholder="Type your task text here"># Hello 1
+    <div class="roasdf">
+      <div class="row">
+        <div class="form-group col-xs-6 col-sm-8 col-md-6 col-lg-6">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="eg. Task from the Past"></input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-xs-8 col-sm-8 col-md-6 col-lg-6">
+          <label for="folder">Folder
+            <span data-toggle="tooltip" data-placement="right" title="Leave empty if you want to place your task into root folder" class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+          </label>
+          <input type="text" class="form-control" id="folder" placeholder="eg. graph/easy/"></input>
+        </div>
+      </div>
+    </div>
 
-$ a $
-        </textarea>
+    <div class="row" style="margin-bottom: 5px;">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <textarea class="form-control markjax-editor markjax-input" placeholder="Type your task text here"></textarea>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="mathjax markjax-editor markjax-preview"></div>
@@ -66,20 +80,8 @@ $ a $
       </div>
     </div>
 
-    <hr>
-
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <textarea class="form-control markjax-editor markjax-input" placeholder="Type your task text here"># Hello 2
-
-$ a $
-        </textarea>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <div class="mathjax markjax-editor markjax-preview"></div>
-        <div class="mathjax markjax-editor markjax-preview-buffer markjax-hidden"></div>
-      </div>
-    </div>
+    <button class="btn btn-danger pull-right">Cancel</button>
+    <button class="btn btn-success pull-right" style="margin-right: 4px;">Create</button>
   </div>
 </body>
 </html>
