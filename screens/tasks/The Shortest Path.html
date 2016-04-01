@@ -76,9 +76,10 @@
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active mathjax markjax-preview" id="task"></div>
-        <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
-        <div class="markjax-input markjax-hidden">
+        <div role="tabpanel" class="tab-pane task-pane active" id="task">
+          <div class="mathjax markjax-preview"></div>
+          <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
+          <div class="markjax-input markjax-hidden">
 You are given a list of cities.
 Each direct connection between two cities has its transportation cost (an integer bigger than $0$).
 The goal is to find the paths of minimum cost between pairs of cities.
@@ -106,11 +107,46 @@ _empty line separating the tests_
 
 ### Output
 $cost$ : the minimum transportation cost from city _NAME1_ to city _NAME2_ (one per line)
+          </div>
+          <div>
+            <div class="panel panel-default">
+              <div class="panel-heading">Input #1</div>
+              <div class="panel-body">
+                <div class="mathjax markjax-preview"></div>
+                <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
+                <div class="markjax-input markjax-hidden">
+```
+1
+4
+gdansk
+2
+2 1
+3 3
+bydgoszcz
+3
+1 1
+3 1
+4 4
+torun
+3
+1 3
+2 1
+4 1
+warszawa
+2
+2 4
+3 1
+2
+gdansk warszawa
+bydgoszcz warszawa
+```
+                </div>
+              </div>
+          </div>
         </div>
-
-        <div role="tabpanel" class="tab-pane" id="hints"></div>
-        <div role="tabpanel" class="tab-pane" id="solutions"></div>
       </div>
+      <div role="tabpanel" class="tab-pane" id="hints"></div>
+      <div role="tabpanel" class="tab-pane" id="solutions"></div>
     </div>
 
   </div>

@@ -33,9 +33,9 @@ var Preview = {
   preview: null,     // filled in by Init below
   buffer: null,      // filled in by Init below
 
-  timeout: null,     // store setTimout id
-  mjRunning: false,  // true when MathJax is processing
-  oldtext: {},     // used to check if an update is needed
+  timeout: [],     // store setTimout id
+  mjRunning: [],  // true when MathJax is processing
+  oldtext: [],     // used to check if an update is needed
 
   index: null,
   length: null,
@@ -61,8 +61,8 @@ var Preview = {
   //  (We use visibility:hidden rather than display:none since
   //  the results of running MathJax are more accurate that way.)
   //
-  SwapBuffers: function () {
-    this.preview[this.index].innerHTML = this.buffer[this.index].innerHTML
+  SwapBuffers: function (index) {
+    this.preview[index].innerHTML = this.buffer[index].innerHTML
   },
 
   //
@@ -74,11 +74,11 @@ var Preview = {
   //  The callback function is set up below, after the Preview object is set up.
   //
   Update: function () {
-    if (this.timeout) {
-      clearTimeout(this.timeout);
+    if (this.timeout[this.index]) {
+      clearTimeout(this.timeout[this.index]);
     }
 
-    this.timeout = setTimeout(this.callback, this.delay);
+    this.timeout[this.index] = setTimeout(MathJax.Callback(["CreatePreview", Preview, this.index]), this.delay);
   },
 
   UpdateAll: function () {
@@ -95,29 +95,29 @@ var Preview = {
   //  Otherwise, indicate that MathJax is running, and start the
   //    typesetting.  After it is done, call PreviewDone.
   //
-  CreatePreview: function () {
-    Preview.timeout = null;
-    if (this.mjRunning) {
+  CreatePreview: function (index) {
+    this.timeout[index] = null;
+    if (this.mjRunning[index]) {
       return;
     }
 
     var text;
-    if (this.textarea[this.index].classList.contains("markjax-editor")) {
-      text = this.textarea[this.index].value;
+    if (this.textarea[index].classList.contains("markjax-editor")) {
+      text = this.textarea[index].value;
     } else {
-      text = this.textarea[this.index].innerHTML;
+      text = this.textarea[index].innerHTML;
     }
-    
-    if (text === this.oldtext[this.index]) {
+
+    if (text === this.oldtext[index]) {
       return;
     }
 
     text = this.Escape(text);                       //Escape tags before doing stuff
-    this.buffer[this.index].innerHTML = this.oldtext[this.index] = text;
-    this.mjRunning = true;
+    this.buffer[index].innerHTML = this.oldtext[index] = text;
+    this.mjRunning[index] = true;
     MathJax.Hub.Queue(
-      ["Typeset", MathJax.Hub, this.buffer[this.index]],
-      ["PreviewDone", this],
+      ["Typeset", MathJax.Hub, this.buffer[index]],
+      ["PreviewDone", this, index],
       ["resetEquationNumbers", MathJax.InputJax.TeX]
     );
   },
@@ -127,16 +127,16 @@ var Preview = {
   //  do markdown over MathJax's result,
   //  and swap the buffers to show the results.
   //
-  PreviewDone: function () {
-    this.mjRunning = false;
-    text = this.buffer[this.index].innerHTML;
+  PreviewDone: function (index) {
+    this.mjRunning[index] = false;
+    text = this.buffer[index].innerHTML;
     // replace occurrences of &gt; at the beginning of a new line
     // with > again, so Markdown blockquotes are handled correctly
     text = text.replace(/^&gt;/mg, '>');
     text = text.replace(/&lt;/mg, '<');  // <
     text = text.replace(/&gt;/mg, '>');  // >
-    this.buffer[this.index].innerHTML = marked (text);
-    this.SwapBuffers();
+    this.buffer[index].innerHTML = marked (text);
+    this.SwapBuffers(index);
   },
 
   Escape: function (html, encode) {
