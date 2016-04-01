@@ -2,6 +2,11 @@ body {
   padding-bottom: 50px;
 }
 
+.breadcrumb {
+  z-index: 0;
+  border-radius: 0px;
+}
+
 .container {
   margin-top: 70px;
 }
