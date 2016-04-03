@@ -125,8 +125,173 @@ Note: input data will guarantee that solution will always exists.
 In the only line of output file write minimal time (in seconds) from the text above.
           </div>
         </div>
-        <div role="tabpanel" class="tab-pane" id="hints"></div>
-        <div role="tabpanel" class="tab-pane" id="solutions"></div>
+        <div role="tabpanel" class="tab-pane task-pane" id="hints">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title pull-left" data-toggle="collapse" data-target="#hint_1">Hint #1</h3>
+
+              <span data-toggle="collapse" data-target="#hint_1" class="indicator glyphicon glyphicon-chevron-down pull-right" style="line-height: 2.1; margin-left: 15px;"></span>
+              <div data-toggle="collapse" data-target="#hint_1" class="clearfix"></div>
+            </div>
+            <div class="panel-body collapse" id="hint_1">
+              <div class="mathjax markjax-preview"></div>
+              <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
+              <div class="markjax-input markjax-hidden">
+Solitaire has $N$ elevators.
+Each elevator are connecting exactly two floors and it does not stop on the floors between that two floors
+the speed of all the elevators are the same, $5$ seconds to pass one floor.
+
+On the beginning, each elevator is in its lower position and they are starting cruising to the upper floor.
+After some elevator come to its upper position, it immediatly starts to go back to its lower position, and so on...
+
+Mirko is on the first (the lowest) floor and he wants as quick as possible come to the top of the solitaire.
+He can change elevators only on the floors that are common to both elevators,
+and if the other elevator is in that moment on that floor, that change does not take any time.
+
+Write a program that will calculate minimal time in which Mirko can get to the top of the solitaire.
+
+### Input
+In the first line of the input file there are two integers $K$ and $N$, separated with space,
+number of floors in solitaire and number of elevators, $2 \leq K \leq 1000$, $1 \leq N \leq 50000$.
+
+In each of the next $N$ lines there are description of one elevator, two integers $A$ and $B$,
+separated with space, $1 \leq A \lt B \leq K$, means that elevator is travelling between floors $A$ and $B$.
+
+There are no two different elevators that travels between same floors.
+
+Note: input data will guarantee that solution will always exists.
+
+### Output
+In the only line of output file write minimal time (in seconds) from the text above.
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title pull-left" data-toggle="collapse" data-target="#hint_2">Hint #2</h3>
+
+              <span data-toggle="collapse" data-target="#hint_2" class="indicator glyphicon glyphicon-chevron-down pull-right" style="line-height: 2.1; margin-left: 15px;"></span>
+              <div data-toggle="collapse" data-target="#hint_2" class="clearfix"></div>
+            </div>
+            <div class="panel-body collapse" id="hint_2">
+              <div class="mathjax markjax-preview"></div>
+              <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
+              <div class="markjax-input markjax-hidden">
+Solitaire has $N$ elevators.
+Each elevator are connecting exactly two floors and it does not stop on the floors between that two floors
+the speed of all the elevators are the same, $5$ seconds to pass one floor.
+
+On the beginning, each elevator is in its lower position and they are starting cruising to the upper floor.
+After some elevator come to its upper position, it immediatly starts to go back to its lower position, and so on...
+
+Mirko is on the first (the lowest) floor and he wants as quick as possible come to the top of the solitaire.
+He can change elevators only on the floors that are common to both elevators,
+and if the other elevator is in that moment on that floor, that change does not take any time.
+
+Write a program that will calculate minimal time in which Mirko can get to the top of the solitaire.
+
+### Input
+In the first line of the input file there are two integers $K$ and $N$, separated with space,
+number of floors in solitaire and number of elevators, $2 \leq K \leq 1000$, $1 \leq N \leq 50000$.
+
+In each of the next $N$ lines there are description of one elevator, two integers $A$ and $B$,
+separated with space, $1 \leq A \lt B \leq K$, means that elevator is travelling between floors $A$ and $B$.
+
+There are no two different elevators that travels between same floors.
+
+Note: input data will guarantee that solution will always exists.
+
+### Output
+In the only line of output file write minimal time (in seconds) from the text above.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div role="tabpanel" class="tab-pane task-pane" id="solutions">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title pull-left" data-toggle="collapse" data-target="#solution_1">Solution #1</h3>
+
+              <span data-toggle="collapse" data-target="#solution_1" class="indicator glyphicon glyphicon-chevron-down pull-right" style="line-height: 2.1; margin-left: 15px;"></span>
+              <div data-toggle="collapse" data-target="#solution_1" class="clearfix"></div>
+            </div>
+            <div class="panel-body collapse" id="solution_1">
+              <div class="mathjax markjax-preview"></div>
+              <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
+              <div class="markjax-input markjax-hidden">
+Solitaire has $N$ elevators.
+Each elevator are connecting exactly two floors and it does not stop on the floors between that two floors
+the speed of all the elevators are the same, $5$ seconds to pass one floor.
+
+On the beginning, each elevator is in its lower position and they are starting cruising to the upper floor.
+After some elevator come to its upper position, it immediatly starts to go back to its lower position, and so on...
+
+Mirko is on the first (the lowest) floor and he wants as quick as possible come to the top of the solitaire.
+He can change elevators only on the floors that are common to both elevators,
+and if the other elevator is in that moment on that floor, that change does not take any time.
+
+Write a program that will calculate minimal time in which Mirko can get to the top of the solitaire.
+
+### Input
+In the first line of the input file there are two integers $K$ and $N$, separated with space,
+number of floors in solitaire and number of elevators, $2 \leq K \leq 1000$, $1 \leq N \leq 50000$.
+
+In each of the next $N$ lines there are description of one elevator, two integers $A$ and $B$,
+separated with space, $1 \leq A \lt B \leq K$, means that elevator is travelling between floors $A$ and $B$.
+
+There are no two different elevators that travels between same floors.
+
+Note: input data will guarantee that solution will always exists.
+
+### Output
+In the only line of output file write minimal time (in seconds) from the text above.
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title pull-left" data-toggle="collapse" data-target="#solution_2">Solution #2</h3>
+
+              <span data-toggle="collapse" data-target="#solution_2" class="indicator glyphicon glyphicon-chevron-down pull-right" style="line-height: 2.1; margin-left: 15px;"></span>
+              <div data-toggle="collapse" data-target="#solution_2" class="clearfix"></div>
+            </div>
+            <div class="panel-body collapse" id="solution_2">
+              <div class="mathjax markjax-preview"></div>
+              <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
+              <div class="markjax-input markjax-hidden">
+Solitaire has $N$ elevators.
+Each elevator are connecting exactly two floors and it does not stop on the floors between that two floors
+the speed of all the elevators are the same, $5$ seconds to pass one floor.
+
+On the beginning, each elevator is in its lower position and they are starting cruising to the upper floor.
+After some elevator come to its upper position, it immediatly starts to go back to its lower position, and so on...
+
+Mirko is on the first (the lowest) floor and he wants as quick as possible come to the top of the solitaire.
+He can change elevators only on the floors that are common to both elevators,
+and if the other elevator is in that moment on that floor, that change does not take any time.
+
+Write a program that will calculate minimal time in which Mirko can get to the top of the solitaire.
+
+### Input
+In the first line of the input file there are two integers $K$ and $N$, separated with space,
+number of floors in solitaire and number of elevators, $2 \leq K \leq 1000$, $1 \leq N \leq 50000$.
+
+In each of the next $N$ lines there are description of one elevator, two integers $A$ and $B$,
+separated with space, $1 \leq A \lt B \leq K$, means that elevator is travelling between floors $A$ and $B$.
+
+There are no two different elevators that travels between same floors.
+
+Note: input data will guarantee that solution will always exists.
+
+### Output
+In the only line of output file write minimal time (in seconds) from the text above.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <hr>
       <div>
