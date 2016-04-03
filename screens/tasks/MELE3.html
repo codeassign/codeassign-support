@@ -2,7 +2,6 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
   <script src="../js/jquery-2.2.2.min.js"></script>
   <script src="../js/bootstrap.js"></script>
 
@@ -14,6 +13,8 @@
   <script src="http://cdn.jsdelivr.net/highlight.js/9.2.0/highlight.min.js"></script>
 
   <script src="../js/autosize.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
 
   <script>
     $(document).ready(function() {
@@ -65,7 +66,7 @@
     </div>
   </nav>
 
-  <ol class="breadcrumb navbar-fixed-top" style="margin-top: 50px;">
+  <ol class="breadcrumb" style="margin-top: 50px;">
     <li class="active">tasks</li>
   </ol>
 
@@ -73,6 +74,7 @@
     <div class="page-header">
       <h1>
         MELE3
+        <small class="author">author: <a>Herman Zvonimir Došilović</a>, 2015-12-31 13:45</small>
         <a class="btn btn-danger pull-right" href="#" role="button">
           <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </a>
@@ -121,142 +123,236 @@ Note: input data will guarantee that solution will always exists.
 
 ### Output
 In the only line of output file write minimal time (in seconds) from the text above.
-
-          </div>
-          <hr>
-          <div>
-            <h2>
-              Test cases
-              <button class="btn btn-primary pull-right" type="submit">
-                <span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download All
-              </button>
-              <button class="btn btn-success pull-right" style="margin-right: 5px" type="submit">
-                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Submit solution
-              </button>
-            </h2>
-
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title pull-left" data-toggle="collapse" data-target="#testcase_1">Test case #1</h3>
-
-                <span data-toggle="collapse" data-target="#testcase_1" class="indicator glyphicon glyphicon-chevron-down pull-right" style="line-height: 2.1; margin-left: 15px;"></span>
-                <button data-toggle="tooltip" data-placement="top" title="Download test case" class="btn btn-default pull-right" type="submit">
-                  <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-                </button>
-                <button data-toggle="tooltip" data-placement="left" title="Submit solution for this test case" class="btn btn-default pull-right" style="margin-right: 5px" type="submit">
-                  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                </button>
-
-                <div data-toggle="collapse" data-target="#testcase_1" class="clearfix"></div>
-              </div>
-              <div class="panel-body collapse" id="testcase_1">
-                <table class="table table-condensed">
-                  <thead>
-                    <tr>
-                      <th>Input</th>
-                      <th>Output</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
-10 4
-1 5
-5 10
-5 7
-7 10</pre>
-                      </td>
-
-                      <td>
-                        <pre>45</pre>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title pull-left" data-toggle="collapse" data-target="#testcase_2">Test case #2</h3>
-
-                <span data-toggle="collapse" data-target="#testcase_2" class="indicator glyphicon glyphicon-chevron-down pull-right" style="line-height: 2.1; margin-left: 15px;"></span>
-                <button data-toggle="tooltip" data-placement="top" title="Download test case" class="btn btn-default pull-right" type="submit">
-                  <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-                </button>
-                <button data-toggle="tooltip" data-placement="left" title="Submit solution for this test case" class="btn btn-default pull-right" style="margin-right: 5px" type="submit">
-                  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                </button>
-                <div data-toggle="collapse" data-target="#testcase_2" class="clearfix"></div>
-              </div>
-              <div class="panel-body collapse" id="testcase_2">
-                <table class="table table-condensed">
-                  <thead>
-                    <tr>
-                      <th>Input</th>
-                      <th>Output</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
-10 3
-1 5
-3 5
-3 10</pre>
-                      </td>
-
-                      <td>
-                        <pre>105</pre>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title pull-left" data-toggle="collapse" data-target="#testcase_3">Test case #3</h3>
-
-                <span data-toggle="collapse" data-target="#testcase_3" class="indicator glyphicon glyphicon-chevron-down pull-right" style="line-height: 2.1; margin-left: 15px;"></span>
-                <button data-toggle="tooltip" data-placement="top" title="Download test case" class="btn btn-default pull-right" type="submit">
-                  <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-                </button>
-                <button data-toggle="tooltip" data-placement="left" title="Submit solution for this test case" class="btn btn-default pull-right" style="margin-right: 5px" type="submit">
-                  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                </button>
-                <div data-toggle="collapse" data-target="#testcase_3" class="clearfix"></div>
-              </div>
-              <div class="panel-body collapse" id="testcase_3">
-                <table class="table table-condensed">
-                  <thead>
-                    <tr>
-                      <th>Input</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
-20 5
-1 7
-7 20
-4 7
-4 10
-10 20</pre>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="hints"></div>
         <div role="tabpanel" class="tab-pane" id="solutions"></div>
+      </div>
+      <hr>
+      <div>
+        <h2>
+          Test cases
+
+          <button class="btn btn-primary pull-right" type="submit">
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download All
+          </button>
+          <button class="btn btn-success pull-right" style="margin-right: 5px" type="submit">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Submit solution
+          </button>
+          <small class="pull-right"><code>cense submit 45853</code>
+            <button style="margin-right: 5px" data-toggle="tooltip" data-placement="top" title="Copy submit command to clipboard" class="btn btn-default">
+              <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+            </button>
+          </small>
+        </h2>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title pull-left" data-toggle="collapse" data-target="#testcase_1">Test case #1</h3>
+
+            <span data-toggle="collapse" data-target="#testcase_1" class="indicator glyphicon glyphicon-chevron-down pull-right" style="line-height: 2.1; margin-left: 15px;"></span>
+            <button data-toggle="tooltip" data-placement="top" title="Download test case" class="btn btn-default pull-right" type="submit">
+              <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+            </button>
+            <button data-toggle="tooltip" data-placement="top" title="Submit solution for this test case" class="btn btn-default pull-right" style="margin-right: 5px" type="submit">
+              <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </button>
+            <div class="pull-right"><code>cense submit 45853 -t 1</code>
+              <button style="margin-right: 5px" data-toggle="tooltip" data-placement="top" title="Copy submit command to clipboard" class="btn btn-default">
+                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div data-toggle="collapse" data-target="#testcase_1" class="clearfix"></div>
+          </div>
+          <div class="panel-body collapse" id="testcase_1">
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Input</th>
+                  <th>Output</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+      10 4
+      1 5
+      5 10
+      5 7
+      7 10</pre>
+                  </td>
+
+                  <td>
+                    <pre>45</pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title pull-left" data-toggle="collapse" data-target="#testcase_2">Test case #2</h3>
+
+            <span data-toggle="collapse" data-target="#testcase_2" class="indicator glyphicon glyphicon-chevron-down pull-right" style="line-height: 2.1; margin-left: 15px;"></span>
+            <button data-toggle="tooltip" data-placement="top" title="Download test case" class="btn btn-default pull-right" type="submit">
+              <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+            </button>
+            <button data-toggle="tooltip" data-placement="top" title="Submit solution for this test case" class="btn btn-default pull-right" style="margin-right: 5px" type="submit">
+              <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </button>
+            <div class="pull-right"><code>cense submit 45853 -t 2</code>
+              <button style="margin-right: 5px" data-toggle="tooltip" data-placement="top" title="Copy submit command to clipboard" class="btn btn-default">
+                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div data-toggle="collapse" data-target="#testcase_2" class="clearfix"></div>
+          </div>
+          <div class="panel-body collapse" id="testcase_2">
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Input</th>
+                  <th>Output</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+      10 3
+      1 5
+      3 5
+      3 10</pre>
+                  </td>
+
+                  <td>
+                    <pre>105</pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title pull-left" data-toggle="collapse" data-target="#testcase_3">Test case #3</h3>
+
+            <span data-toggle="collapse" data-target="#testcase_3" class="indicator glyphicon glyphicon-chevron-down pull-right" style="line-height: 2.1; margin-left: 15px;"></span>
+            <button data-toggle="tooltip" data-placement="top" title="Download test case" class="btn btn-default pull-right" type="submit">
+              <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+            </button>
+            <button data-toggle="tooltip" data-placement="top" title="Submit solution for this test case" class="btn btn-default pull-right" style="margin-right: 5px" type="submit">
+              <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </button>
+            <div class="pull-right"><code>cense submit 45853 -t 3</code>
+              <button style="margin-right: 5px" data-toggle="tooltip" data-placement="top" title="Copy submit command to clipboard" class="btn btn-default">
+                <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div data-toggle="collapse" data-target="#testcase_3" class="clearfix"></div>
+          </div>
+          <div class="panel-body collapse" id="testcase_3">
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Input</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+      20 5
+      1 7
+      7 20
+      4 7
+      4 10
+      10 20</pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div>
+        <h2>Comments</h2>
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <a href="#">Josip Gatjal</a>
+              <p class="pull-right">2015-12-31 13:45</p>
+            </div>
+            <div class="panel-body mathjax markjax-preview comment"></div>
+            <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
+            <div class="markjax-input markjax-hidden">
+  ### Lorem
+  Lorem ipsum dolor sit amet, est sale postea voluptua an, maiorum volumus iracundia eos ea.
+  $$ a^2 + b^2 = c^2 $$
+            </div>
+          </div>
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <a href="#">Petar Šegina</a>
+              <p class="pull-right">2015-12-31 13:50</p>
+            </div>
+            <div class="panel-body mathjax markjax-preview comment"></div>
+            <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
+            <div class="markjax-input markjax-hidden">
+  ### Ipsum! $ a \leq b $
+  Tollit commodo singulis duo cu, et quaeque saperet delicata sit, te qui affert fastidii laboramus.
+  At tantas veritus copiosae quo. Eu quem audire alterum pro, sea at appetere quaestio. An his iisque recusabo
+            </div>
+          </div>
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <a href="#">Antonia Elek</a>
+              <p class="pull-right">2015-12-31 14:21</p>
+            </div>
+            <div class="panel-body mathjax markjax-preview comment"></div>
+            <div class="mathjax markjax-preview-buffer markjax-hidden"></div>
+            <div class="markjax-input markjax-hidden">
+  ### Lorem Ipsum
+  Lorem ipsum dolor sit amet, mazim numquam detracto vim ea, et fastidii referrentur nam. Eu mentitum salutandi eum, vix labore vocibus adipiscing et, ad vis stet porro inermis. Ad qui affert nullam accumsan, vero congue ex quo. Ne nam porro albucius, quas doctus luptatum ne sea. No stet percipitur mei, eu ullum temporibus sea.
+
+  Pri verear repudiare at, sed oratio vivendum ea, in pro facilis omittam luptatum. Rebum instructior mei ad. Mel no scripta discere mediocritatem, cu eum fugit philosophia. Nihil vitae insolens quo an. Veri tollit numquam qui te, quo prima timeam an, id virtute probatus vix. Oporteat deseruisse te eos, cum ei posse facete adolescens.
+
+  Et lucilius voluptaria voluptatibus quo, nibh consequat mei at. Justo eripuit vim ei, at vim dico alia conceptam, eum ne recteque repudiare intellegat. Vocent euripidis quaerendum ei eum, at vim ceteros pertinacia. Wisi assueverit eu eos, mel te suas graecis. Ne malis voluptatum sit.
+
+  Ullum movet vocent per eu, reque nonumy omittantur quo no, id homero debitis dissentiet per. Malis eripuit vim ei, ea pro propriae philosophia instructior, ne qui inani viderer. Vel prima summo ludus an. An decore vivendum conceptam mel, volumus fastidii ne eam, ancillae maluisset eu sit. Id aliquam patrioque has, eos clita admodum et, epicuri adipisci ut per. Sed ei regione consequuntur, id his adhuc sonet minimum, ius ex nibh detracto percipit.
+
+  Nisl populo ei has. Labore aliquando persecuti id per, in ullum tempor scriptorem eum, no mel sensibus comprehensam. Ut vim debet vivendo, vim quas dicam an, adipisci persequeris eloquentiam sit no. Ea munere volutpat accommodare vel. Eruditi recusabo eleifend vis no.
+            </div>
+          </div>
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <a href="#">Herman Zvonimir Došilović</a>
+            </div>
+            <div class="panel-body comment my-comment">
+              <div class="comment-input col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <textarea class="form-control markjax-editor markjax-input" placeholder="Write a comment..."></textarea>
+              </div>
+              <div class="comment-preview col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="mathjax markjax-editor markjax-preview"></div>
+                <div class="mathjax markjax-editor markjax-preview-buffer markjax-hidden"></div>
+              </div>
+            </div>
+            <div class="panel-footer" style="border-color: #bce8f1; text-align: right">
+              <button class="btn btn-success">Add Comment</button>
+            </div>
+          </div>
+
+        </div>
       </div>
 </body>
 </html>

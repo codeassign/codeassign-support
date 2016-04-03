@@ -1,13 +1,51 @@
+.author {
+  font-size: 14px;
+}
+
+.author a, .author a:hover, .author a:focus {
+  color: gray;
+}
+
 body {
   padding-bottom: 50px;
 }
 
 .breadcrumb {
-  z-index: 0;
+  z-index: 900;
   border-radius: 0px;
 }
 
+.comment .comment-input,
+.comment .comment-preview,
+.comment.my-comment {
+  padding: 0px;
+}
+
+.comment textarea,
+.comment .markjax-preview {
+  border-radius: 0px;
+  border: 0px;
+}
+
+.comment .markjax-editor {
+  min-height: 150px;
+}
+
+.comment textarea, .comment textarea:focus {
+  border: none;
+  border-right: 1px dashed #bce8f1;
+  border-radius: 0 0 0 4px;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
 .container {
+  margin-top: 0px;
+}
+
+.container.no-breadcrumb {
   margin-top: 70px;
 }
 
